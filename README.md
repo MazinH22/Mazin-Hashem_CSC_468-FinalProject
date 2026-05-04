@@ -1,0 +1,56 @@
+# AI Wrestling Strategy Planner
+
+
+Mazin Hashem  
+CSC-468  
+Professor Nelson  
+Final Project: AI Search and Reinforcement Learning  
+
+---
+
+## Project Overview
+
+This project is an AI-based wrestling strategy planner that compares two different artificial intelligence approaches: **Minimax search** and **Q-learning reinforcement learning**. The system models a simplified wrestling match as a state-space problem where an agent must choose the best action based on the current match situation.
+
+The project was created as a final project focused on AI search, planning, and reinforcement learning. The main goal is to explore whether AI methods can recommend effective wrestling strategies in a simulated match environment.
+
+---
+
+## Problem Statement
+
+Wrestling requires quick decision-making based on position, score, and time remaining. A wrestler may need to decide whether to shoot, defend, escape, reverse, or ride depending on the current match situation.
+
+This project asks:
+
+**Can AI recommend effective wrestling actions by using search-based planning and reinforcement learning?**
+
+---
+
+## AI Concepts Used
+
+### Minimax Search
+
+The Minimax agent uses a search-based planning approach. It looks ahead at possible future moves and opponent responses, then chooses the action that leads to the best estimated outcome.
+
+Minimax represents the planning side of the project because it evaluates future states before choosing a move.
+
+### Q-Learning
+
+The Q-learning agent uses reinforcement learning. It learns through repeated simulated matches and updates its action values based on rewards.
+
+The agent receives rewards for positive outcomes such as scoring points, gaining better position, and winning the match. It receives negative rewards for giving up points, ending in a bad position, or losing.
+
+---
+
+## Match State Representation
+
+Each wrestling situation is represented as a `MatchState` with three main parts:
+
+- `position`: Neutral, Top, or Bottom
+- `score_diff`: Our score minus the opponent’s score
+- `time_left`: Time remaining in the match
+
+Example:
+
+```python
+MatchState(Position.BOTTOM, -1, 20)
